@@ -65,11 +65,11 @@ structure and the demonstrations are the same, with two differences:
 
 * the `Colours` frame documents the AMSUniBo palette and where each value comes
   from;
-* in the `Citations` frame the two block environments are the other way round.
-  `\ccite` is the weight for light surfaces and `\cccite` the one for dark, and
-  in this style the `exampleblock` header is the light one and the `alertblock`
-  header the dark one — so each command is now demonstrated on a header it can
-  actually be read on.
+* in the `Citations` frame each weight is demonstrated on a header it can
+  actually be read on. `\ccite` and `\cccite` are **both** light — a citation
+  marker's usual home is a block header, which is dark — so `\ccite` sits on the
+  `block` header and `\cccite`, the lighter of the two, on the `alertblock` one.
+  The original template put `\cccite` on a light header, where it cannot be seen.
 
 ## structure
 

@@ -23,7 +23,7 @@
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 % version -- Major.Minor[.Patch]; the release time-stamp is appended by the CI
 \newcommand{\templatemajor}{1}
-\newcommand{\templateminor}{0}
+\newcommand{\templateminor}{1}
 % \templatepatch is optional: comment the next line out to release as Major.Minor
 %\newcommand{\templatepatch}{0}
 \ifdefined\templatepatch
@@ -318,23 +318,26 @@ each named after the \texttt{@ams-*} variable it comes from in the wiki theme
 %/////////
 \begin{frame}[c,allowframebreaks,fragile]{Citations}
 %
-\begin{exampleblock}{\texttt{\textbackslash{}ccite} command---e.g., \ccite{bibtex-patashnik88}}
+\begin{block}{\texttt{\textbackslash{}ccite} command---e.g., \ccite{bibtex-patashnik88}}
 \begin{verbatim}
 \ccite{bibtex-patashnik88}
 \end{verbatim}
 \begin{itemize}
 	\item to be used instead of standard \texttt{\textbackslash{}cite} command
-	\item prints as \ccite{bibtex-patashnik88}
-	\item can be used as a note\ccite{bibtex-patashnik88}, with no space before
+	\item light, for the dark surfaces a citation marker usually sits on
+	\begin{itemize}
+		\item as here above in the \texttt{block} header
+	\end{itemize}
+	\item can be used as a note\ccite{bibtex-patashnik88}, with no space before---faint in running text, by design
 \end{itemize}
-\end{exampleblock}
+\end{block}
 %
 \begin{alertblock}{\texttt{\textbackslash{}cccite} command---e.g., \cccite{bibtex-patashnik88}}
 \begin{verbatim}
 \cccite{bibtex-patashnik88}
 \end{verbatim}
 \begin{itemize}
-	\item a lighter version of the \texttt{\textbackslash{}ccite} command over dark backgrounds
+	\item the lighter of the two, for the loudest surfaces
 	\begin{itemize}
 		\item as here above in the \texttt{alertblock} header
 	\end{itemize}
