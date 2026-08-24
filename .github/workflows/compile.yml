@@ -1,0 +1,46 @@
+name: compile
+on:
+  push:
+    branches:
+      - main
+      - master
+
+env:
+  LATEX_ROOT: AMSUniBo-template
+
+permissions:
+  contents: write
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Build latex
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: ${{ env.LATEX_ROOT }}.tex
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode -shell-escape
+
+      - name: Compute version
+        id: get-version
+        run: |
+          BASE="$(python3 .github/scripts/compute-version.py ${LATEX_ROOT}.tex)"
+          STAMP="$(date -u +'%Y-%m-%dT%H%M%S')"
+          echo "version=${BASE}" >> "$GITHUB_OUTPUT"
+          echo "tag=${BASE}-${STAMP}" >> "$GITHUB_OUTPUT"
+
+      - name: Create release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ steps.get-version.outputs.tag }}
+        run: |
+          cp "${LATEX_ROOT}.pdf" "${LATEX_ROOT}-${TAG}.pdf"
+          gh release create "${TAG}" "${LATEX_ROOT}-${TAG}.pdf" \
+            --title "${TAG}" \
+            --notes "AMSUniBo Beamer template ${{ steps.get-version.outputs.version }}, released from ${GITHUB_SHA}."

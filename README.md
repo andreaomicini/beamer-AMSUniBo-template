@@ -1,0 +1,113 @@
+# beamer-AMSUniBo-template
+
+> A ready-to-use presentation skeleton for the
+> [AMSUniBo Beamer style](https://github.com/andreaomicini/beamer-AMSUniBo)
+
+## author
+
+* Andrea Omicini
+
+## usage
+
+Clone the repository **with its submodule**, since the style is pulled in that way:
+
+```bash
+git clone --recurse-submodules https://github.com/andreaomicini/beamer-AMSUniBo-template.git
+```
+
+If you have already cloned without `--recurse-submodules`:
+
+```bash
+git submodule update --init .style
+```
+
+Then edit `AMSUniBo-template.tex` and build it as usual, e.g.
+
+```bash
+latexmk -pdf AMSUniBo-template.tex
+```
+
+The most recent build of the template is attached to every
+[release](https://github.com/andreaomicini/beamer-AMSUniBo-template/releases).
+
+### the `apice` option
+
+The template's preamble enables the style's `apice` option:
+
+```latex
+\documentclass[presentation,apice]{beamer}\mode<presentation>{\usetheme{AMSUniBo}}
+```
+
+With it, an `apice` field in a BibTeX entry is displayed as a small `(APICe)`
+marker linking to the corresponding page of the
+[APICe](https://apice.unibo.it/) Wiki:
+
+```bibtex
+@manual{bibtex-patashnik88,
+    ...
+    apice = {BibtexPatashnik88},
+}
+```
+
+Drop the option and nothing else has to change: `\apicepar` is still defined,
+but expands to nothing, so the same `.bib` and the same slides keep working
+with the markers simply absent.
+
+The template's own slides demonstrate the option, and the bibliography shows
+the marker in place.
+
+## relation to beamer-AMSBolognaFC-template
+
+This is
+[beamer-AMSBolognaFC-template](https://github.com/andreaomicini/beamer-AMSBolognaFC-template)
+with the AMSUniBo style in place of the AMSBolognaFC one. The frames, the
+structure and the demonstrations are the same, with two differences:
+
+* the `Colours` frame documents the AMSUniBo palette and where each value comes
+  from;
+* in the `Citations` frame the two block environments are the other way round.
+  `\ccite` is the weight for light surfaces and `\cccite` the one for dark, and
+  in this style the `exampleblock` header is the light one and the `alertblock`
+  header the dark one — so each command is now demonstrated on a header it can
+  actually be read on.
+
+## structure
+
+The style itself lives in the `.style` submodule, which tracks the `main`
+branch of [beamer-AMSUniBo](https://github.com/andreaomicini/beamer-AMSUniBo).
+The style files in the repository root are symbolic links into `.style`, so
+there is exactly one copy of each file.
+
+To move the template onto a newer style release:
+
+```bash
+git submodule update --remote .style
+git add .style
+git commit -m "Update style submodule"
+```
+
+## versioning
+
+The template version is declared in `AMSUniBo-template.tex` as
+`\templatemajor` / `\templateminor` / `\templatepatch`, giving
+`Major.Minor[.Patch]`. `\templatepatch` is optional: comment it out to release
+as `Major.Minor`.
+
+Releases are tagged `Major.Minor[.Patch]-<UTC time-stamp>`, with the time-stamp
+appended automatically by the CI at release time.
+
+The template is versioned independently of the style: it changes sometimes
+together with the style and sometimes on its own.
+
+## licence
+
+The template is released into the public domain under
+[CC0 1.0 Universal](LICENSE). Use it, adapt it and build on it freely, with no
+obligation to credit or to carry any notice into your own presentations.
+
+This applies to the template itself. The style files reached through the
+`.style` submodule are covered by their own licence — the
+[LaTeX Project Public License](https://github.com/andreaomicini/beamer-AMSUniBo/blob/main/LICENSE),
+version 1.3c or later — and `apalike-AMS.bst` remains subject to Oren
+Patashnik's terms. The colours are the Alma Mater Studiorum's institutional
+ones, and their use is governed by the Ateneo's own rules.

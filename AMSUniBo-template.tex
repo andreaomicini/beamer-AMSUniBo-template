@@ -1,0 +1,493 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% AMS Beamer series / UniBo / Template
+% Andrea Omicini
+% Alma Mater Studiorum - Università di Bologna
+% mailto:andrea.omicini@unibo.it
+%
+% This template is released into the public domain under CC0 1.0 Universal:
+% use it, adapt it and build on it freely, with no obligation to credit.
+% See the LICENSE file, or https://creativecommons.org/publicdomain/zero/1.0/
+%
+% The AMSUniBo style it uses is covered by its own licence (LPPL 1.3c):
+% https://github.com/andreaomicini/beamer-AMSUniBo
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[presentation,apice]{beamer}\mode<presentation>{\usetheme{AMSUniBo}}
+%\documentclass[presentation]{beamer}\mode<presentation>{\usetheme{AMSUniBo}}
+%\documentclass[handout]{beamer}\mode<handout>{\usetheme{AMSUniBo}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{wasysym}
+\usepackage[yyyymmdd]{datetime}
+\renewcommand{\dateseparator}{}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+% version -- Major.Minor[.Patch]; the release time-stamp is appended by the CI
+\newcommand{\templatemajor}{1}
+\newcommand{\templateminor}{0}
+% \templatepatch is optional: comment the next line out to release as Major.Minor
+%\newcommand{\templatepatch}{0}
+\ifdefined\templatepatch
+  \newcommand{\templateversion}{\templatemajor.\templateminor.\templatepatch}
+\else
+  \newcommand{\templateversion}{\templatemajor.\templateminor}
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title[AMS UniBo Beamer Style]
+{AMS UniBo Beamer Style}
+%
+\subtitle[AMS Series Templates]
+{AMS Series Templates}
+%
+\author[\sspeaker{Omicini} \and Else]
+{\speaker{Andrea Omicini} \and Nobody Else\\\href{mailto:andrea.omicini@unibo.it}{andrea.omicini@unibo.it} \and \href{mailto:nobody.else@unibo.it}{nobody.else@unibo.it}}
+%
+\institute[DISI, Univ.\ Bologna]
+{Dipartimento di Informatica -- Scienza e Ingegneria (DISI)\\\textsc{Alma Mater Studiorum} -- Universit{\`a} di Bologna}
+%
+\date[v.\ \templateversion]{version \templateversion}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%/////////
+\frame{\titlepage}
+%/////////
+
+%%===============================================================================
+%\section*{Outline}
+%%===============================================================================
+%
+%%/////////
+%\frame[c]{\tableofcontents[hideallsubsections]}
+%%/////////
+
+%===============================================================================
+\section{Premises}
+%===============================================================================
+
+%/////////
+\begin{frame}[c]{Academic Presentations}
+%
+\begin{itemize}
+	\item technical presentations are common in the academic environment
+	\item \alert{\LaTeX{}}\footnote{\uurl{http://latex.org}} is typically used for scientific literature
+	\begin{itemize}
+		\item for better formulas, bibliography, typography, \ldots
+	\end{itemize}
+	\item so, \LaTeX{} is the most typical \emph{toolbox} for scientific presentations
+	\begin{itemize}
+		\item which easily translates into teaching presentations, too
+	\end{itemize}
+\end{itemize}
+%
+\end{frame}
+%/////////
+
+%/////////
+\begin{frame}[c]{Beamer}
+%
+\begin{itemize}
+	\item \alert{Beamer} is a \LaTeX{} document class for creating presentation \emph{slides}, with a wide range of \emph{templates} and a set of features for making \emph{slideshow effects}
+	\begin{description}
+		\item[repo] \uurl{https://github.com/josephwright/beamer}
+		\item[CTAN] \uurl{https://ctan.org/pkg/beamer}
+	\end{description}
+	\item even though other styles for \LaTeX{} presentations exist, Beamer is by far the best way today
+\end{itemize}
+%
+\end{frame}
+%/////////
+
+%/////////
+\begin{frame}[c]{AMS}
+%
+\begin{description}
+	\item[AMS] Alma Mater Studiorum--Università di Bologna
+	\item[UniBo] the Ateneo as a whole, rather than one of its Campuses
+	\begin{itemize}
+		\item hence the institutional colours
+		\item and the \emph{Alma Mater} seal watermarking every slide
+	\end{itemize}
+\end{description}
+%
+\end{frame}
+%/////////
+
+%/////////
+\begin{frame}[c]{Aim}
+%
+\begin{itemize}
+	\item many occasions for presentation
+	\item many different people in the group
+	\item a common reference could be useful
+	\item hence, this style
+	\item the same style as \alert{AMSBolognaFC}, in the colours of the Ateneo
+	\begin{itemize}
+		\item as used by the \alert{AMSUniBo} theme of the \href{http://apice.unibo.it/}{\textsf{APICe}} wiki
+	\end{itemize}
+\end{itemize}
+%
+\end{frame}
+%/////////
+
+%/////////
+\begin{frame}[c]{Who}
+%
+\begin{itemize}
+	\item mostly, myself
+	\item and, collaborators of mine---the \alert{good} ones \textcolor{amsred}{\smiley{}}
+	\item everybody else, \emph{be my guest!}
+\end{itemize}
+%
+\end{frame}
+%/////////
+
+%===============================================================================
+\section{Use}
+%===============================================================================
+
+%/////////
+\begin{frame}[c,allowframebreaks]{Files}
+%
+\begin{block}{Getting the files}
+Every \href{https://github.com/andreaomicini/beamer-AMSUniBo/releases}{release} of the style attaches a \texttt{style.zip} holding everything needed
+\begin{itemize}
+	\item \texttt{beamerthemeAMSUniBo.sty}, \texttt{beamercolorthemeamsunibo.sty}
+	\item \texttt{almacesena-background.pdf}
+	\item \texttt{apalike-AMS.bst}
+	\item \texttt{LICENSE}
+\end{itemize}
+\end{block}
+%
+\begin{block}{Style files}
+The files
+\begin{itemize}
+	\item \texttt{beamercolorthemeamsunibo.sty}
+	\item \texttt{beamerthemeAMSUniBo.sty}
+	\item \texttt{almacesena-background.pdf}
+\end{itemize}
+should be placed either in the local folder with the main \texttt{.tex} file, or, in your Beamer system directory, e.g.
+\begin{itemize}
+	\item \texttt{/Users/\{username\}/Library/texmf/tex/latex/local/beamer/}
+\end{itemize}
+\end{block}
+%
+\begin{block}{BST files}
+The files
+\begin{itemize}
+	\item \texttt{apalike-AMS.bst}
+\end{itemize}
+should be placed either in the local folder with the main \texttt{.tex} file, or, in your Beamer system directory, e.g.
+\begin{itemize}
+	\item \texttt{/Users/\{username\}/Library/texmf/bibtex/bst/local/}
+\end{itemize}
+\end{block}
+%
+\end{frame}
+%/////////
+
+%/////////
+\begin{frame}[c,fragile]{Declaration}
+%
+\begin{block}{\texttt{\textbackslash{}documentclass}}
+Your main Beamer \texttt{.tex} file should open with the declaration
+%
+\begin{verbatim}
+    \documentclass[presentation]{beamer}
+        \mode<presentation>{\usetheme{AMSUniBo}}
+\end{verbatim}
+%
+so as to use the AMS UniBo Beamer style
+\end{block}
+%
+\end{frame}
+%/////////
+
+%/////////
+\begin{frame}[c,fragile]{Bibliography Style}
+%
+\begin{block}{\texttt{apalike-AMS}}
+Your main Beamer \texttt{.tex} file should include the declaration
+\begin{verbatim}
+    \bibliographystyle{apalike-AMS}
+\end{verbatim}
+so as to use the AMS UniBo \BibTeX{} style
+\end{block}
+%
+\end{frame}
+%/////////
+
+%/////////
+\begin{frame}[c,fragile]{Template}
+%
+\begin{block}{\texttt{AMSUniBo-template.tex}}
+This template's sources can be used as a simple example of how to use this Beamer style
+\end{block}
+%
+\end{frame}
+%/////////
+
+
+%===============================================================================
+\section{Style}
+%===============================================================================
+
+%/////////
+\begin{frame}[c,allowframebreaks]{Colours for AMS UniBo}
+%
+The palette is that of the \alert{AMSUniBo} theme of the \href{http://apice.unibo.it/}{\textsf{APICe}} wiki, and every colour is used here in the role it has there: \emph{red} is the identity colour, \emph{green} the structural one
+%
+\begin{exampleblock}{\texttt{\textcolor{amsred}{amsred}}---rosso istituzionale}
+	\begin{description}
+		\item[HEX] \texttt{\#BB2E29}
+		\item[RGB] \texttt{187,46,41}
+		\item[from] \emph{Sistema di identità di Ateneo}, Pantone 1805
+	\end{description}
+\end{exampleblock}
+\begin{exampleblock}{\texttt{\textcolor{amsgreendark}{amsgreendark}}---structure}
+	\begin{description}
+		\item[HEX] \texttt{\#366861}
+		\item[RGB] \texttt{54,104,97}
+		\item[from] the brochure green, darkened to read on white
+	\end{description}
+\end{exampleblock}
+\framebreak
+\begin{exampleblock}{\texttt{\textcolor{amsgreen}{amsgreen}}---brochure green}
+	\begin{description}
+		\item[HEX] \texttt{\#56A49A}
+		\item[RGB] \texttt{86,164,154}
+		\item[from] \emph{Brochure di Ateneo 2026}
+	\end{description}
+\end{exampleblock}
+\begin{exampleblock}{\texttt{\textcolor{amsgreymid}{amsgreymid}}---secondary text}
+	\begin{description}
+		\item[HEX] \texttt{\#535353}
+		\item[RGB] \texttt{83,83,83}
+		\item[from] the \emph{PPT Unibo 2026} templates
+	\end{description}
+\end{exampleblock}
+\framebreak
+\begin{block}{The full palette}
+\begin{itemize}
+	\item \texttt{amsred}, \texttt{amsreddark}, \texttt{amsblack}, \texttt{amstext}
+	\item \texttt{amsgreen}, \texttt{amsgreenlight}, \texttt{amsgreendark}, \texttt{amsgreentint}, \texttt{amsgreentint2}
+	\item \texttt{amsgrey}, \texttt{amsgreymid}, \texttt{amsgreyline}, \texttt{amsgreybg}
+	\item \texttt{amswhite}, and the block fills \texttt{amsredfill}, \texttt{amsredborder}, \texttt{amsgreenfill}, \texttt{amsgreenborder}
+\end{itemize}
+each named after the \texttt{@ams-*} variable it comes from in the wiki theme
+\end{block}
+%
+\end{frame}
+%/////////
+
+%/////////
+\begin{frame}[c,fragile]{Blocks}
+%
+\begin{block}{This is a \texttt{block} environment}
+\begin{verbatim}
+\begin{block}
+...
+\end{block}
+\end{verbatim}
+\end{block}
+%
+\begin{exampleblock}{This is an \texttt{exampleblock} environment}
+\begin{verbatim}
+\begin{exampleblock}
+...
+\end{exampleblock}
+\end{verbatim}
+\end{exampleblock}
+%
+\begin{alertblock}{This is an \texttt{alertblock} environment}
+\begin{verbatim}
+\begin{alertblock}
+...
+\end{alertblock}
+\end{verbatim}
+\end{alertblock}
+%
+\end{frame}
+%/////////
+
+%===============================================================================
+\section{New Commands}
+%===============================================================================
+
+%/////////
+\begin{frame}[c,allowframebreaks,fragile]{Citations}
+%
+\begin{exampleblock}{\texttt{\textbackslash{}ccite} command---e.g., \ccite{bibtex-patashnik88}}
+\begin{verbatim}
+\ccite{bibtex-patashnik88}
+\end{verbatim}
+\begin{itemize}
+	\item to be used instead of standard \texttt{\textbackslash{}cite} command
+	\item prints as \ccite{bibtex-patashnik88}
+	\item can be used as a note\ccite{bibtex-patashnik88}, with no space before
+\end{itemize}
+\end{exampleblock}
+%
+\begin{alertblock}{\texttt{\textbackslash{}cccite} command---e.g., \cccite{bibtex-patashnik88}}
+\begin{verbatim}
+\cccite{bibtex-patashnik88}
+\end{verbatim}
+\begin{itemize}
+	\item a lighter version of the \texttt{\textbackslash{}ccite} command over dark backgrounds
+	\begin{itemize}
+		\item as here above in the \texttt{alertblock} header
+	\end{itemize}
+	\item can be used as a note with no space before, in the same way as \texttt{\textbackslash{}ccite}
+\end{itemize}
+\end{alertblock}
+%
+\end{frame}
+%/////////
+
+%/////////
+\begin{frame}[c,fragile]{URLs}
+%
+\begin{block}{\texttt{\textbackslash{}uurl} command}
+\begin{itemize}
+	\item to be used instead of standard \texttt{\textbackslash{}url} command
+	\item[e.g.] \verb|\uurl{http://apice.unibo.it}| prints as \uurl{http://apice.unibo.it}
+\end{itemize}
+\end{block}
+%
+\begin{block}{\texttt{\textbackslash{}uuurl} command---e.g., \uuurl{http://apice.unibo.it}}
+\begin{itemize}
+	\item to be used instead of standard \texttt{\textbackslash{}url} command over dark backgrounds
+	\item[e.g.] see \verb|\uuurl{http://apice.unibo.it}| above in this \texttt{block} header
+\end{itemize}
+\end{block}
+%
+\end{frame}
+%/////////
+
+%/////////
+\begin{frame}[c,fragile]{Alert}
+%
+\begin{block}{\texttt{\textbackslash{}aalert} command---e.g., \aalert{alerted text}}
+\begin{itemize}
+	\item to be used instead of standard \texttt{\textbackslash{}alert} command over dark backgrounds
+	\item[e.g.] see \verb|\aalert{alerted text}| above in this \texttt{block} header
+\end{itemize}
+\end{block}
+%
+\end{frame}
+%/////////
+
+%/////////
+\begin{frame}[c,fragile,allowframebreaks]{Speaker(s) \emph{vs.} Authors}
+%
+\begin{exampleblock}{\texttt{\textbackslash{}speaker} command--e.g., \speaker{Diego Zorro}}
+\begin{itemize}
+	\item to be used within \texttt{\textbackslash{}author} standard Beamer command to single out the actual speaker among the authors
+	\item[e.g.] as in
+\begin{verbatim}
+	\author[Garcia \and Zorro]
+	{Sarg Garcia \and \speaker{Diego Zorro}}
+\end{verbatim}
+	\item and in the author specification of this template
+\end{itemize}
+\end{exampleblock}
+%
+\begin{block}{\texttt{\textbackslash{}sspeaker} command--e.g., \sspeaker{Diego Zorro}}
+\begin{itemize}
+	\item to be used within \texttt{\textbackslash{}author} standard Beamer command to single out the actual speaker among the authors in the short form
+	\item[e.g.] as in
+\begin{verbatim}
+	\author[Garcia \and \sspeaker{Zorro}]
+	{Sarg Garcia \and \speaker{Diego Zorro}}
+\end{verbatim}
+	\item and in the author specification of this template
+\end{itemize}
+\end{block}
+
+\end{frame}
+%/////////
+
+%===============================================================================
+\section{New Options}
+%===============================================================================
+
+%/////////
+\begin{frame}[c,fragile,allowframebreaks]{\texttt{apice} option}
+%
+\begin{alertblock}{\texttt{apice} Beamer option}
+\begin{itemize}
+	\item the option \texttt{apice} can be used in the presentation preamble
+	\begin{itemize}
+		\item as in
+		\begin{verbatim}
+\documentclass[presentation,apice]{beamer}...
+		\end{verbatim}
+	\end{itemize}
+	\item enables the display of the \BibTeX{} field \texttt{apice}
+	\begin{itemize}
+		\item containing the relative URL of the publication on the \alert{\href{http://apice.unibo.it/}{\textsf{APICe}}} Wiki
+	\end{itemize}
+	\item properly linked to the corresponding \href{http://apice.unibo.it/}{\textsf{APICe}} page
+\end{itemize}
+\end{alertblock}
+%
+\begin{exampleblock}{Example}
+%
+The following \BibTeX{} entry in the \texttt{.bib} file with the \texttt{apice} option enabled
+%
+{\tiny\begin{verbatim}
+@manual{bibtex-patashnik88,
+    apice = {BibtexPatashnik88},
+    author = {Patashnik, Oren},
+    booktitle = {\BibTeXing},
+    month = {8~} # feb,
+    organization = {CTAN, The Comprehensive TeX Archive Network},
+    title = {\BibTeX{}ing},
+    url = {http://mirrors.ctan.org/biblio/bibtex/base/btxdoc.pdf},
+    year = 1988}
+\end{verbatim}}
+%
+would translate into the following entry in the presentation bibliography
+%
+\begin{thebibliography}{}
+\bibitem[Patashnik, 1988]{bibtex-patashnik88}
+Patashnik, O. (1988).
+\\[-0.1em] {\em \BibTeX{}ing}.
+\\[-0.0em] CTAN, The Comprehensive TeX Archive Network
+\\[-0.4em] \apicepar{BibtexPatashnik88} \uurl{http://mirrors.ctan.org/biblio/bibtex/base/btxdoc.pdf}.
+\end{thebibliography}
+%
+\end{exampleblock}
+%
+\end{frame}
+%/////////
+
+%===============================================================================
+\section*{}
+%===============================================================================
+
+%/////////
+\frame{\titlepage}
+%/////////
+
+%===============================================================================
+\section*{\refname}
+%===============================================================================
+
+%%%%
+\setbeamertemplate{page number in head/foot}{}
+%/////////
+\begin{frame}[c,noframenumbering]{\refname}
+%\begin{frame}[t,allowframebreaks,noframenumbering]{\refname}
+%	\tiny
+	\scriptsize
+%	\footnotesize
+	\bibliographystyle{apalike-AMS}
+	\bibliography{AMSUniBo-template}
+\end{frame}
+%/////////
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
