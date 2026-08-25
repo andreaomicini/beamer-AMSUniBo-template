@@ -27,7 +27,7 @@
 \newcommand{\swgroup}[1]{\multicolumn{2}{@{}l}{\textcolor{amsgreendark}{\textbf{#1}}}}
 % version -- Major.Minor[.Patch]; the release time-stamp is appended by the CI
 \newcommand{\templatemajor}{1}
-\newcommand{\templateminor}{5}
+\newcommand{\templateminor}{6}
 % \templatepatch is optional: comment the next line out to release as Major.Minor
 %\newcommand{\templatepatch}{0}
 \ifdefined\templatepatch{}
@@ -489,6 +489,36 @@ Patashnik, O. (1988).
 \\[-0.4em] \apicepar{BibtexPatashnik88} \uuurl{https://mirrors.ctan.org/biblio/bibtex/base/btxdoc.pdf}.
 \end{thebibliography}
 %
+\end{exampleblock}
+%
+\end{frame}
+%/////////
+
+%/////////
+\begin{frame}[c,fragile]{\texttt{bologna}, \texttt{cesena} options}
+%
+\begin{alertblock}{Which seal watermarks the slides}
+\begin{itemize}
+	\item \texttt{bologna}\textemdash{}the seal of the \emph{Alma Mater Studiorum} as a whole
+	\begin{itemize}
+		\item the default\textemdash{}the option can be omitted
+	\end{itemize}
+	\item \texttt{cesena}\textemdash{}the seal of the \emph{Campus di Cesena}
+	\begin{itemize}
+		\item the two are told apart by the border, solid for the Campus and an outline for the Ateneo
+	\end{itemize}
+	\item both sit in the lower-right corner, cropped by the page edge
+	\begin{itemize}
+		\item the one on this very slide is the one this deck selected
+	\end{itemize}
+\end{itemize}
+\end{alertblock}
+%
+\begin{exampleblock}{Example}
+\begin{verbatim}
+\documentclass[presentation,cesena]{beamer}
+    \mode<presentation>{\usetheme{AMSUniBo}}
+\end{verbatim}
 \end{exampleblock}
 %
 \end{frame}

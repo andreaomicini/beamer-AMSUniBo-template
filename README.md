@@ -69,6 +69,23 @@ with the markers simply absent.
 The template's own slides demonstrate the option, and the bibliography shows
 the marker in place.
 
+### the `bologna` and `cesena` options
+
+The style watermarks every slide with a seal in the lower-right corner, cropped by
+the page edge. `bologna` selects the seal of the *Alma Mater Studiorum* as a whole
+and is the default, so the option can be left out; `cesena` selects the seal of the
+*Campus di Cesena* instead:
+
+```latex
+\documentclass[presentation,cesena]{beamer}\mode<presentation>{\usetheme{AMSUniBo}}
+```
+
+The two are told apart by the border — solid for the Campus, an outline for the
+Ateneo — which is what an eye in the Alma Mater reads first. Nothing else in a deck
+changes, and saying `bologna` explicitly is identical to saying nothing.
+
+This template leaves the option out, so its slides carry the Ateneo seal.
+
 ## relation to beamer-AMSBolognaFC-template
 
 This is
