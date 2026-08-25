@@ -7,6 +7,19 @@
 
 * Andrea Omicini
 
+## requirements
+
+* A TeX distribution providing `pdflatex`, `latexmk` and `bibtex` (TeX Live).
+* The font packages the style loads, all from TeX Live: `merriweather`,
+  `inconsolata`, `newtxsf` and `anyfontsize`. The first three are in
+  `collection-fontsextra`, the last in `collection-latexextra`; both are in
+  `scheme-full`, neither in a minimal installation such as BasicTeX, where
+  `tlmgr install merriweather inconsolata newtxsf anyfontsize` is enough.
+
+The style itself needs no separate installation: the `.style` submodule pins the
+release this template was built against, and the symbolic links in the repository
+root reach it.
+
 ## usage
 
 Clone the repository **with its submodule**, since the style is pulled in that way:

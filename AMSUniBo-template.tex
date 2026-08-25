@@ -21,11 +21,15 @@
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
+% a colour swatch, framed so the pale ones still read against white
+\newcommand{\swatch}[1]{\fcolorbox{amsgreyline}{#1}{\rule{0pt}{1.3ex}\rule{2.2ex}{0pt}}}
+% a group heading inside the palette tables
+\newcommand{\swgroup}[1]{\multicolumn{2}{@{}l}{\textcolor{amsgreendark}{\textbf{#1}}}}
 % version -- Major.Minor[.Patch]; the release time-stamp is appended by the CI
 \newcommand{\templatemajor}{1}
-\newcommand{\templateminor}{4}
+\newcommand{\templateminor}{5}
 % \templatepatch is optional: comment the next line out to release as Major.Minor
-\newcommand{\templatepatch}{1}
+%\newcommand{\templatepatch}{0}
 \ifdefined\templatepatch{}
   \newcommand{\templateversion}{\templatemajor.\templateminor.\templatepatch}
 \else
@@ -211,53 +215,76 @@ This template's sources can be used as a simple example of how to use this Beame
 %===============================================================================
 
 %/////////
-\begin{frame}[c,allowframebreaks]{Colours for AMS UniBo}
+\begin{frame}[c]{Colours}
 %
-The palette is that of the \alert{AMSUniBo} theme of the \href{https://apice.unibo.it/}{\textsf{APICe}} wiki, and every colour is used here in the role it has there: \emph{red} is the identity colour, \emph{green} the structural one
+The palette is the one the \alert{AMSUniBo} theme of the
+\href{https://apice.unibo.it/}{\textsf{APICe}} wiki uses, and every colour keeps the
+role it has there: \textcolor{amsred}{\textit{red}} identifies,
+\textcolor{amsgreendark}{\textit{green}} structures
 %
-\begin{exampleblock}{\texttt{\textcolor{amsred}{amsred}}---rosso istituzionale}
-	\begin{description}
-		\item[HEX] \texttt{\#BB2E29}
-		\item[RGB] \texttt{187,46,41}
-		\item[from] \emph{Sistema di identità di Ateneo}, Pantone 1805
-	\end{description}
-\end{exampleblock}
-\begin{exampleblock}{\texttt{\textcolor{amsgreendark}{amsgreendark}}---structure}
-	\begin{description}
-		\item[HEX] \texttt{\#366861}
-		\item[RGB] \texttt{54,104,97}
-		\item[from] the brochure green, darkened to read on white
-	\end{description}
+\begin{exampleblock}{The four that carry the style}
+\begin{tabular}{@{}llll@{}}
+\swatch{amsred}       & \texttt{amsred}       & \texttt{\#BB2E29} & head line, author, bullets, alerts \\
+\swatch{amsgreendark} & \texttt{amsgreendark} & \texttt{\#366861} & block headers, emphasis, \textsc{toc} \\
+\swatch{amsgreen}     & \texttt{amsgreen}     & \texttt{\#56A49A} & separation lines, and the block fills \\
+\swatch{amsgreymid}   & \texttt{amsgreymid}   & \texttt{\#535353} & subtitle, date, footnotes \\
+\end{tabular}
 \end{exampleblock}
 %
-\framebreak{}
-%
-\begin{exampleblock}{\texttt{\textcolor{amsgreen}{amsgreen}}---brochure green}
-	\begin{description}
-		\item[HEX] \texttt{\#56A49A}
-		\item[RGB] \texttt{86,164,154}
-		\item[from] \emph{Brochure di Ateneo 2026}
-	\end{description}
-\end{exampleblock}
-\begin{exampleblock}{\texttt{\textcolor{amsgreymid}{amsgreymid}}---secondary text}
-	\begin{description}
-		\item[HEX] \texttt{\#535353}
-		\item[RGB] \texttt{83,83,83}
-		\item[from] the \emph{PPT Unibo 2026} templates
-	\end{description}
-\end{exampleblock}
-%
-\framebreak{}
-%
-\begin{block}{The full palette}
 \begin{itemize}
-	\item \texttt{amsred}, \texttt{amsreddark}, \texttt{amsblack}, \texttt{amstext}
-	\item \texttt{amsgreen}, \texttt{amsgreenlight}, \texttt{amsgreendark}, \texttt{amsgreentint}, \texttt{amsgreentint2}
-	\item \texttt{amsgrey}, \texttt{amsgreymid}, \texttt{amsgreyline}, \texttt{amsgreybg}
-	\item \texttt{amswhite}, and the block fills \texttt{amsredfill}, \texttt{amsredborder}, \texttt{amsgreenfill}, \texttt{amsgreenborder}
+	\item \texttt{amsred} is the \emph{rosso istituzionale}, Pantone 1805, from the
+	      \emph{Sistema di identità di Ateneo}
+	\item \texttt{amsgreen} is the \emph{Brochure di Ateneo 2026} green;
+	      \texttt{amsgreendark} is it darkened to read on white
 \end{itemize}
-each named after the \texttt{@ams-*} variable it comes from in the wiki theme
-\end{block}
+%
+\end{frame}
+%/////////
+
+%/////////
+\begin{frame}[c]{The Full Palette}
+%
+\footnotesize
+\begin{columns}[T]
+\begin{column}{.33\textwidth}
+\begin{tabular}{@{}ll@{}}
+\swgroup{identity}\\
+\swatch{amsred}        & \texttt{amsred} \\
+\swatch{amsreddark}    & \texttt{amsreddark} \\[.8ex]
+\swgroup{structure}\\
+\swatch{amsgreen}      & \texttt{amsgreen} \\
+\swatch{amsgreenlight} & \texttt{amsgreenlight} \\
+\swatch{amsgreendark}  & \texttt{amsgreendark} \\
+\swatch{amsgreentint}  & \texttt{amsgreentint} \\
+\swatch{amsgreentint2} & \texttt{amsgreentint2} \\
+\end{tabular}
+\end{column}
+\begin{column}{.33\textwidth}
+\begin{tabular}{@{}ll@{}}
+\swgroup{text and neutrals}\\
+\swatch{amsblack}    & \texttt{amsblack} \\
+\swatch{amstext}     & \texttt{amstext} \\
+\swatch{amsgrey}     & \texttt{amsgrey} \\
+\swatch{amsgreymid}  & \texttt{amsgreymid} \\
+\swatch{amsgreyline} & \texttt{amsgreyline} \\
+\swatch{amsgreybg}   & \texttt{amsgreybg} \\
+\swatch{amswhite}    & \texttt{amswhite} \\
+\end{tabular}
+\end{column}
+\begin{column}{.33\textwidth}
+\begin{tabular}{@{}ll@{}}
+\swgroup{block fills}\\
+\swatch{amsredfill}     & \texttt{amsredfill} \\
+\swatch{amsredborder}   & \texttt{amsredborder} \\
+\swatch{amsgreenfill}   & \texttt{amsgreenfill} \\
+\swatch{amsgreenborder} & \texttt{amsgreenborder} \\
+\end{tabular}
+\end{column}
+\end{columns}
+%
+\bigskip
+Most are named after the \texttt{@ams-*} variable they come from in the wiki theme;
+the block fills come from its \texttt{@state-*} pairs
 %
 \end{frame}
 %/////////
