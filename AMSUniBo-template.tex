@@ -23,10 +23,10 @@
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 % version -- Major.Minor[.Patch]; the release time-stamp is appended by the CI
 \newcommand{\templatemajor}{1}
-\newcommand{\templateminor}{3}
+\newcommand{\templateminor}{4}
 % \templatepatch is optional: comment the next line out to release as Major.Minor
 %\newcommand{\templatepatch}{0}
-\ifdefined\templatepatch
+\ifdefined\templatepatch{}
   \newcommand{\templateversion}{\templatemajor.\templateminor.\templatepatch}
 \else
   \newcommand{\templateversion}{\templatemajor.\templateminor}
@@ -39,10 +39,12 @@
 {AMS Series Templates}
 %
 \author[\sspeaker{Omicini} \and Else]
-{\speaker{Andrea Omicini} \and Nobody Else\\\href{mailto:andrea.omicini@unibo.it}{andrea.omicini@unibo.it} \and \href{mailto:nobody.else@unibo.it}{nobody.else@unibo.it}}
+{\speaker{Andrea Omicini} \and Someone Else}
 %
-\institute[DISI, Univ.\ Bologna]
-{Dipartimento di Informatica -- Scienza e Ingegneria (DISI)\\\textsc{Alma Mater Studiorum} -- Universit{\`a} di Bologna}
+\institute[DISI, Univ. Bologna]
+{\url{mailto:andrea.omicini@unibo.it} \qquad \url{mailto:someone.else@unibo.it}\\
+Dipartimento di Informatica \textendash{} Scienza e Ingegneria (DISI)\\
+\textsc{Alma Mater Studiorum} \textendash{} Università di Bologna}
 %
 \date[v.\ \templateversion]{version \templateversion}
 %
@@ -71,7 +73,7 @@
 %
 \begin{itemize}
 	\item technical presentations are common in the academic environment
-	\item \alert{\LaTeX{}}\footnote{\uurl{http://latex.org}} is typically used for scientific literature
+	\item \alert{\LaTeX{}}\footnote{\uurl{https://www.latex-project.org}} is typically used for scientific literature
 	\begin{itemize}
 		\item for better formulas, bibliography, typography, \ldots
 	\end{itemize}
@@ -103,7 +105,7 @@
 \begin{frame}[c]{AMS}
 %
 \begin{description}
-	\item[AMS] Alma Mater Studiorum--Università di Bologna
+	\item[AMS] Alma Mater Studiorum\textendash{}Università di Bologna
 	\item[UniBo] the Ateneo as a whole, rather than one of its Campuses
 	\begin{itemize}
 		\item hence the institutional colours
@@ -122,9 +124,10 @@
 	\item many different people in the group
 	\item a common reference could be useful
 	\item hence, this style
-	\item the same style as \alert{AMSBolognaFC}, in the colours of the Ateneo
+	\item in the colours and fonts of the Alma Mater Studiorum
 	\begin{itemize}
-		\item as used by the \alert{AMSUniBo} theme of the \href{http://apice.unibo.it/}{\textsf{APICe}} wiki
+		\item as derived from the official documentation, the actual documents, and the main sites
+		\item the same used by the \alert{AMSUniBo} theme of the \href{https://apice.unibo.it/}{\textsf{APICe}} wiki
 	\end{itemize}
 \end{itemize}
 %
@@ -143,49 +146,23 @@
 \end{frame}
 %/////////
 
-%===============================================================================
-\section{Use}
-%===============================================================================
-
 %/////////
-\begin{frame}[c,allowframebreaks]{Files}
+\begin{frame}[c]{Distribution}
 %
-\begin{block}{Getting the files}
-Every \href{https://github.com/andreaomicini/beamer-AMSUniBo/releases}{release} of the style attaches a \texttt{style.zip} holding everything needed
-\begin{itemize}
-	\item \texttt{beamerthemeAMSUniBo.sty}, \texttt{beamercolorthemeamsunibo.sty}
-	\item \texttt{almacesena-background.pdf}
-	\item \texttt{apalike-AMS.bst}
-	\item \texttt{LICENSE}
-\end{itemize}
-\end{block}
-%
-\begin{block}{Style files}
-The files
-\begin{itemize}
-	\item \texttt{beamercolorthemeamsunibo.sty}
-	\item \texttt{beamerthemeAMSUniBo.sty}
-	\item \texttt{almacesena-background.pdf}
-\end{itemize}
-should be placed either in the local folder with the main \texttt{.tex} file, or, in your Beamer system directory, e.g.
-\begin{itemize}
-	\item \texttt{/Users/\{username\}/Library/texmf/tex/latex/local/beamer/}
-\end{itemize}
-\end{block}
-%
-\begin{block}{BST files}
-The files
-\begin{itemize}
-	\item \texttt{apalike-AMS.bst}
-\end{itemize}
-should be placed either in the local folder with the main \texttt{.tex} file, or, in your Beamer system directory, e.g.
-\begin{itemize}
-	\item \texttt{/Users/\{username\}/Library/texmf/bibtex/bst/local/}
-\end{itemize}
+\begin{block}{Public on GitHub}
+	\begin{itemize}
+		\item the style is distributed on \url{https://github.com/andreaomicini/beamer-AMSUniBo/}
+		\item the releases are available at \url{https://github.com/andreaomicini/beamer-AMSUniBo/releases}
+		\item this template is distributed on \url{https://github.com/andreaomicini/beamer-AMSUniBo-template/}
+	\end{itemize}
 \end{block}
 %
 \end{frame}
 %/////////
+
+%===============================================================================
+\section{Use}
+%===============================================================================
 
 %/////////
 \begin{frame}[c,fragile]{Declaration}
@@ -198,7 +175,7 @@ Your main Beamer \texttt{.tex} file should open with the declaration
         \mode<presentation>{\usetheme{AMSUniBo}}
 \end{verbatim}
 %
-so as to use the AMS UniBo Beamer style
+so as to use the AMSUniBo Beamer style
 \end{block}
 %
 \end{frame}
@@ -212,7 +189,7 @@ Your main Beamer \texttt{.tex} file should include the declaration
 \begin{verbatim}
     \bibliographystyle{apalike-AMS}
 \end{verbatim}
-so as to use the AMS UniBo \BibTeX{} style
+so as to use the AMSUniBo \BibTeX{} style
 \end{block}
 %
 \end{frame}
@@ -236,7 +213,7 @@ This template's sources can be used as a simple example of how to use this Beame
 %/////////
 \begin{frame}[c,allowframebreaks]{Colours for AMS UniBo}
 %
-The palette is that of the \alert{AMSUniBo} theme of the \href{http://apice.unibo.it/}{\textsf{APICe}} wiki, and every colour is used here in the role it has there: \emph{red} is the identity colour, \emph{green} the structural one
+The palette is that of the \alert{AMSUniBo} theme of the \href{https://apice.unibo.it/}{\textsf{APICe}} wiki, and every colour is used here in the role it has there: \emph{red} is the identity colour, \emph{green} the structural one
 %
 \begin{exampleblock}{\texttt{\textcolor{amsred}{amsred}}---rosso istituzionale}
 	\begin{description}
@@ -252,7 +229,9 @@ The palette is that of the \alert{AMSUniBo} theme of the \href{http://apice.unib
 		\item[from] the brochure green, darkened to read on white
 	\end{description}
 \end{exampleblock}
-\framebreak
+%
+\framebreak{}
+%
 \begin{exampleblock}{\texttt{\textcolor{amsgreen}{amsgreen}}---brochure green}
 	\begin{description}
 		\item[HEX] \texttt{\#56A49A}
@@ -267,7 +246,9 @@ The palette is that of the \alert{AMSUniBo} theme of the \href{http://apice.unib
 		\item[from] the \emph{PPT Unibo 2026} templates
 	\end{description}
 \end{exampleblock}
-\framebreak
+%
+\framebreak{}
+%
 \begin{block}{The full palette}
 \begin{itemize}
 	\item \texttt{amsred}, \texttt{amsreddark}, \texttt{amsblack}, \texttt{amstext}
@@ -286,7 +267,7 @@ each named after the \texttt{@ams-*} variable it comes from in the wiki theme
 %
 \begin{block}{This is a \texttt{block} environment}
 \begin{verbatim}
-\begin{block}
+\begin{block}{...}
 ...
 \end{block}
 \end{verbatim}
@@ -294,7 +275,7 @@ each named after the \texttt{@ams-*} variable it comes from in the wiki theme
 %
 \begin{exampleblock}{This is an \texttt{exampleblock} environment}
 \begin{verbatim}
-\begin{exampleblock}
+\begin{exampleblock}{...}
 ...
 \end{exampleblock}
 \end{verbatim}
@@ -302,7 +283,7 @@ each named after the \texttt{@ams-*} variable it comes from in the wiki theme
 %
 \begin{alertblock}{This is an \texttt{alertblock} environment}
 \begin{verbatim}
-\begin{alertblock}
+\begin{alertblock}{...}
 ...
 \end{alertblock}
 \end{verbatim}
@@ -354,14 +335,34 @@ each named after the \texttt{@ams-*} variable it comes from in the wiki theme
 \begin{block}{\texttt{\textbackslash{}uurl} command}
 \begin{itemize}
 	\item to be used instead of standard \texttt{\textbackslash{}url} command
-	\item[e.g.] \verb|\uurl{http://apice.unibo.it}| prints as \uurl{http://apice.unibo.it}
+	\item[e.g.] \verb|\uurl{https://apice.unibo.it}| prints as \uurl{https://apice.unibo.it}
 \end{itemize}
 \end{block}
 %
-\begin{block}{\texttt{\textbackslash{}uuurl} command---e.g., \uuurl{http://apice.unibo.it}}
+\begin{block}{\texttt{\textbackslash{}uuurl} command\textemdash{}e.g., \uuurl{https://apice.unibo.it}}
 \begin{itemize}
 	\item to be used instead of standard \texttt{\textbackslash{}url} command over dark backgrounds
-	\item[e.g.] see \verb|\uuurl{http://apice.unibo.it}| above in this \texttt{block} header
+	\item[e.g.] see \verb|\uuurl{https://apice.unibo.it}| above in this \texttt{block} header
+\end{itemize}
+\end{block}
+%
+\end{frame}
+%/////////
+
+%/////////
+\begin{frame}[c,fragile]{DOI}
+%
+\begin{block}{\texttt{\textbackslash{}ddoi} command}
+\begin{itemize}
+	\item to be used for the styled DOI URLs
+	\item[e.g.] \verb|\ddoi{10.1007/978-3-032-22940-3}| prints as \ddoi{10.1007/978-3-032-22940-3} % chktex 8
+\end{itemize}
+\end{block}
+%
+\begin{block}{\texttt{\textbackslash{}dddoi} command}
+\begin{itemize}
+	\item to be used for the styled DOI URLs
+	\item[e.g.] \verb|\dddoi{10.1007/978-3-032-22940-3}| prints as \dddoi{10.1007/978-3-032-22940-3} % chktex 8
 \end{itemize}
 \end{block}
 %
@@ -371,7 +372,7 @@ each named after the \texttt{@ams-*} variable it comes from in the wiki theme
 %/////////
 \begin{frame}[c,fragile]{Alert}
 %
-\begin{block}{\texttt{\textbackslash{}aalert} command---e.g., \aalert{alerted text}}
+\begin{block}{\texttt{\textbackslash{}aalert} command\textemdash{}e.g., \aalert{alerted text}}
 \begin{itemize}
 	\item to be used instead of standard \texttt{\textbackslash{}alert} command over dark backgrounds
 	\item[e.g.] see \verb|\aalert{alerted text}| above in this \texttt{block} header
@@ -382,9 +383,9 @@ each named after the \texttt{@ams-*} variable it comes from in the wiki theme
 %/////////
 
 %/////////
-\begin{frame}[c,fragile,allowframebreaks]{Speaker(s) \emph{vs.} Authors}
+\begin{frame}[c,fragile,allowframebreaks]{Speakers \emph{vs.} Authors}
 %
-\begin{exampleblock}{\texttt{\textbackslash{}speaker} command--e.g., \speaker{Diego Zorro}}
+\begin{exampleblock}{\texttt{\textbackslash{}speaker} command\textendash{}e.g., \speaker{Diego Zorro}}
 \begin{itemize}
 	\item to be used within \texttt{\textbackslash{}author} standard Beamer command to single out the actual speaker among the authors
 	\item[e.g.] as in
@@ -396,7 +397,7 @@ each named after the \texttt{@ams-*} variable it comes from in the wiki theme
 \end{itemize}
 \end{exampleblock}
 %
-\begin{block}{\texttt{\textbackslash{}sspeaker} command--e.g., \sspeaker{Diego Zorro}}
+\begin{block}{\texttt{\textbackslash{}sspeaker} command\textemdash{}e.g., \sspeaker{Diego Zorro}}
 \begin{itemize}
 	\item to be used within \texttt{\textbackslash{}author} standard Beamer command to single out the actual speaker among the authors in the short form
 	\item[e.g.] as in
@@ -429,9 +430,9 @@ each named after the \texttt{@ams-*} variable it comes from in the wiki theme
 	\end{itemize}
 	\item enables the display of the \BibTeX{} field \texttt{apice}
 	\begin{itemize}
-		\item containing the relative URL of the publication on the \alert{\href{http://apice.unibo.it/}{\textsf{APICe}}} Wiki
+		\item containing the relative URL of the publication on the \alert{\href{https://apice.unibo.it/}{\textsf{APICe}}} XWiki
 	\end{itemize}
-	\item properly linked to the corresponding \href{http://apice.unibo.it/}{\textsf{APICe}} page
+	\item properly linked to the corresponding \href{https://apice.unibo.it/}{\textsf{APICe}} page
 \end{itemize}
 \end{alertblock}
 %
@@ -447,18 +448,18 @@ The following \BibTeX{} entry in the \texttt{.bib} file with the \texttt{apice} 
     month = {8~} # feb,
     organization = {CTAN, The Comprehensive TeX Archive Network},
     title = {\BibTeX{}ing},
-    url = {http://mirrors.ctan.org/biblio/bibtex/base/btxdoc.pdf},
+    url = {https://mirrors.ctan.org/biblio/bibtex/base/btxdoc.pdf},
     year = 1988}
-\end{verbatim}}
+\end{verbatim}} %chktex 31
 %
 would translate into the following entry in the presentation bibliography
 %
 \begin{thebibliography}{}
-\bibitem[Patashnik, 1988]{bibtex-patashnik88}
+\bibitem[Patashnik, 1988]{bibtex-patashnik1988}
 Patashnik, O. (1988).
 \\[-0.1em] {\em \BibTeX{}ing}.
 \\[-0.0em] CTAN, The Comprehensive TeX Archive Network
-\\[-0.4em] \apicepar{BibtexPatashnik88} \uurl{http://mirrors.ctan.org/biblio/bibtex/base/btxdoc.pdf}.
+\\[-0.4em] \apicepar{BibtexPatashnik88} \uuurl{https://mirrors.ctan.org/biblio/bibtex/base/btxdoc.pdf}.
 \end{thebibliography}
 %
 \end{exampleblock}
@@ -467,7 +468,7 @@ Patashnik, O. (1988).
 %/////////
 
 %===============================================================================
-\section*{}
+\section*{} 
 %===============================================================================
 
 %/////////
