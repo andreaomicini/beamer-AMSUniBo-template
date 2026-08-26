@@ -27,7 +27,7 @@
 \newcommand{\swgroup}[1]{\multicolumn{2}{@{}l}{\textcolor{amsgreendark}{\textbf{#1}}}}
 % version -- Major.Minor[.Patch]; the release time-stamp is appended by the CI
 \newcommand{\templatemajor}{1}
-\newcommand{\templateminor}{7}
+\newcommand{\templateminor}{8}
 % \templatepatch is optional: comment the next line out to release as Major.Minor
 %\newcommand{\templatepatch}{1}
 \ifdefined\templatepatch{}
@@ -337,6 +337,10 @@ the block fills come from its \texttt{@state-*} pairs
 		\item as here above in the \texttt{block} header
 	\end{itemize}
 	\item can be used as a note\ccite{bibtex-patashnik88}, with no space before---faint in running text, by design
+	\item since style 1.6.1 it takes the optional note of \texttt{\textbackslash{}cite}\ccite[p.~42]{bibtex-patashnik88}
+	\begin{itemize}
+		\item as here above, from \verb|\ccite[p.~42]{bibtex-patashnik88}|
+	\end{itemize}
 \end{itemize}
 \end{block}
 %
@@ -350,6 +354,7 @@ the block fills come from its \texttt{@state-*} pairs
 		\item as here above in the \texttt{alertblock} header
 	\end{itemize}
 	\item can be used as a note with no space before, in the same way as \texttt{\textbackslash{}ccite}
+	\item takes the optional note in the same way\cccite[p.~42]{bibtex-patashnik88}
 \end{itemize}
 \end{alertblock}
 %

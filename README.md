@@ -105,6 +105,8 @@ structure and the demonstrations are the same, with two differences:
   marker's usual home is a block header, which is dark — so `\ccite` sits on the
   `block` header and `\cccite`, the lighter of the two, on the `alertblock` one.
   The original template put `\cccite` on a light header, where it cannot be seen.
+  Since style 1.6.1 the frame also demonstrates the optional note both weights
+  now take, as in `\ccite[p.~42]{key}`, which the AMSBolognaFC style has not.
 
 ## structure
 
