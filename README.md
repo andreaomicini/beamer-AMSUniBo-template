@@ -48,7 +48,7 @@ The most recent build of the template is attached to every
 The template's preamble enables the style's `apice` option:
 
 ```latex
-\documentclass[presentation,apice]{beamer}\mode<presentation>{\usetheme{AMSUniBo}}
+\documentclass[presentation,bologna,apice]{beamer}\mode<presentation>{\usetheme{AMSUniBo}}
 ```
 
 With it, an `apice` field in a BibTeX entry is displayed as a small `(APICe)`
@@ -71,20 +71,25 @@ the marker in place.
 
 ### the `bologna` and `cesena` options
 
-The style watermarks every slide with a seal in the lower-right corner, cropped by
-the page edge. `bologna` selects the seal of the *Alma Mater Studiorum* as a whole
-and is the default, so the option can be left out; `cesena` selects the seal of the
-*Campus di Cesena* instead:
+These select the seal that watermarks every slide, in the lower-right corner and
+cropped by the page edge. `bologna` selects the seal of the *Alma Mater Studiorum*
+as a whole, `cesena` the seal of the *Campus di Cesena*:
 
 ```latex
+\documentclass[presentation,bologna]{beamer}\mode<presentation>{\usetheme{AMSUniBo}}
 \documentclass[presentation,cesena]{beamer}\mode<presentation>{\usetheme{AMSUniBo}}
 ```
 
 The two are told apart by the border — solid for the Campus, an outline for the
-Ateneo — which is what an eye in the Alma Mater reads first. Nothing else in a deck
-changes, and saying `bologna` explicitly is identical to saying nothing.
+Ateneo — which is what an eye in the Alma Mater reads first.
 
-This template leaves the option out, so its slides carry the Ateneo seal.
+**Neither option, no seal.** Since style 1.6 the watermark is not the default: a
+deck has to claim a seal out loud, and one that claims neither is simply bare.
+The seals are institutional marks, so this is what anyone not belonging — or no
+longer, or not yet belonging — to the Alma Mater should do, and the style is
+theirs to use unchanged in every other respect.
+
+This template passes `bologna`, so its slides carry the Ateneo seal.
 
 ## relation to beamer-AMSBolognaFC-template
 

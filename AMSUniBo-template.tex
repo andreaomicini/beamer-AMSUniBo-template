@@ -11,7 +11,7 @@
 % The AMSUniBo style it uses is covered by its own licence (LPPL 1.3c):
 % https://github.com/andreaomicini/beamer-AMSUniBo
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass[presentation,apice]{beamer}\mode<presentation>{\usetheme{AMSUniBo}}
+\documentclass[presentation,bologna,apice]{beamer}\mode<presentation>{\usetheme{AMSUniBo}}
 %\documentclass[presentation]{beamer}\mode<presentation>{\usetheme{AMSUniBo}}
 %\documentclass[handout]{beamer}\mode<handout>{\usetheme{AMSUniBo}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -27,9 +27,9 @@
 \newcommand{\swgroup}[1]{\multicolumn{2}{@{}l}{\textcolor{amsgreendark}{\textbf{#1}}}}
 % version -- Major.Minor[.Patch]; the release time-stamp is appended by the CI
 \newcommand{\templatemajor}{1}
-\newcommand{\templateminor}{6}
+\newcommand{\templateminor}{7}
 % \templatepatch is optional: comment the next line out to release as Major.Minor
-\newcommand{\templatepatch}{1}
+%\newcommand{\templatepatch}{1}
 \ifdefined\templatepatch{}
   \newcommand{\templateversion}{\templatemajor.\templateminor.\templatepatch}
 \else
@@ -113,7 +113,7 @@ Dipartimento di Informatica \textendash{} Scienza e Ingegneria (DISI)\\
 	\item[UniBo] the Ateneo as a whole, rather than one of its Campuses
 	\begin{itemize}
 		\item hence the institutional colours
-		\item and the \emph{Alma Mater} seal watermarking every slide
+		\item and, this deck having asked for it, the \emph{Alma Mater} seal watermarking every slide
 	\end{itemize}
 \end{description}
 %
@@ -497,12 +497,9 @@ Patashnik, O. (1988).
 %/////////
 \begin{frame}[c,fragile]{\texttt{bologna}, \texttt{cesena} options}
 %
-\begin{alertblock}{Which seal watermarks the slides}
+\begin{alertblock}{Which seal watermarks the slides\textemdash{}none, unless asked for}
 \begin{itemize}
 	\item \texttt{bologna}\textemdash{}the seal of the \emph{Alma Mater Studiorum} as a whole
-	\begin{itemize}
-		\item the default\textemdash{}the option can be omitted
-	\end{itemize}
 	\item \texttt{cesena}\textemdash{}the seal of the \emph{Campus di Cesena}
 	\begin{itemize}
 		\item the two are told apart by the border, solid for the Campus and an outline for the Ateneo
@@ -511,12 +508,17 @@ Patashnik, O. (1988).
 	\begin{itemize}
 		\item the one on this very slide is the one this deck selected
 	\end{itemize}
+	\item \alert{neither option, no seal}\textemdash{}the slides stay bare
+	\begin{itemize}
+		\item the seals are institutional marks, so a deck claims one out loud
+		\item which leaves the style free to use for whoever does not belong\textemdash{}or no longer, or not yet belongs\textemdash{}to the \emph{Alma Mater}
+	\end{itemize}
 \end{itemize}
 \end{alertblock}
 %
 \begin{exampleblock}{Example}
 \begin{verbatim}
-\documentclass[presentation,cesena]{beamer}
+\documentclass[presentation,bologna]{beamer}
     \mode<presentation>{\usetheme{AMSUniBo}}
 \end{verbatim}
 \end{exampleblock}
