@@ -96,7 +96,7 @@ This template passes `bologna`, so its slides carry the Ateneo seal.
 This is
 [beamer-AMSBolognaFC-template](https://github.com/andreaomicini/beamer-AMSBolognaFC-template)
 with the AMSUniBo style in place of the AMSBolognaFC one. The frames, the
-structure and the demonstrations are the same, with two differences:
+structure and the demonstrations are the same, with three differences:
 
 * the `Colours` frame documents the AMSUniBo palette and where each value comes
   from;
@@ -107,6 +107,10 @@ structure and the demonstrations are the same, with two differences:
   The original template put `\cccite` on a light header, where it cannot be seen.
   Since style 1.6.1 the frame also demonstrates the optional note both weights
   now take, as in `\ccite[p.~42]{key}`, which the AMSBolognaFC style has not.
+* the `URLs` and `DOI` frames record that since style 1.6.2 an address needs no
+  escaping, so the chapter DOI is written `\ddoi{10.1007/978-3-032-22940-3_12}`,
+  exactly as the publisher gives it. Under the AMSBolognaFC style that underscore
+  still asks for maths mode.
 
 ## structure
 

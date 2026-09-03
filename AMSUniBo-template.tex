@@ -29,7 +29,7 @@
 \newcommand{\templatemajor}{1}
 \newcommand{\templateminor}{8}
 % \templatepatch is optional: comment the next line out to release as Major.Minor
-%\newcommand{\templatepatch}{1}
+\newcommand{\templatepatch}{1}
 \ifdefined\templatepatch{}
   \newcommand{\templateversion}{\templatemajor.\templateminor.\templatepatch}
 \else
@@ -368,6 +368,7 @@ the block fills come from its \texttt{@state-*} pairs
 \begin{itemize}
 	\item to be used instead of standard \texttt{\textbackslash{}url} command
 	\item[e.g.] \verb|\uurl{https://apice.unibo.it}| prints as \uurl{https://apice.unibo.it}
+	\item since style 1.6.2 no character in the address needs escaping
 \end{itemize}
 \end{block}
 %
@@ -388,6 +389,7 @@ the block fills come from its \texttt{@state-*} pairs
 \begin{itemize}
 	\item to be used for the styled DOI URLs
 	\item[e.g.] \verb|\ddoi{10.1007/978-3-032-22940-3}| prints as \ddoi{10.1007/978-3-032-22940-3} % chktex 8
+	\item[e.g.] since style 1.6.2 an underscore needs no escaping: \verb|\ddoi{10.1007/978-3-032-22940-3_12}| prints as \ddoi{10.1007/978-3-032-22940-3_12} % chktex 8
 \end{itemize}
 \end{block}
 %
