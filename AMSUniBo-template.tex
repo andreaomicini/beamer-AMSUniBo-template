@@ -29,7 +29,7 @@
 \newcommand{\templatemajor}{1}
 \newcommand{\templateminor}{8}
 % \templatepatch is optional: comment the next line out to release as Major.Minor
-\newcommand{\templatepatch}{4}
+\newcommand{\templatepatch}{5}
 \ifdefined\templatepatch{}
   \newcommand{\templateversion}{\templatemajor.\templateminor.\templatepatch}
 \else
@@ -155,9 +155,9 @@ Dipartimento di Informatica \textendash{} Scienza e Ingegneria (DISI)\\
 %
 \begin{block}{Public on GitHub}
 	\begin{itemize}
-		\item the style is distributed on \url{https://github.com/andreaomicini/beamer-AMSUniBo/}
-		\item the releases are available at \url{https://github.com/andreaomicini/beamer-AMSUniBo/releases}
-		\item this template is distributed on \url{https://github.com/andreaomicini/beamer-AMSUniBo-template/}
+		\item the style is distributed on \uurl{https://github.com/andreaomicini/beamer-AMSUniBo/}
+		\item the releases are available at \uurl{https://github.com/andreaomicini/beamer-AMSUniBo/releases}
+		\item this template is distributed on \uurl{https://github.com/andreaomicini/beamer-AMSUniBo-template/}
 	\end{itemize}
 \end{block}
 %
@@ -419,7 +419,7 @@ the block fills come from its \texttt{@state-*} pairs
 %/////////
 \begin{frame}[c,fragile,allowframebreaks]{Speakers \emph{vs.} Authors}
 %
-\begin{exampleblock}{\texttt{\textbackslash{}speaker} command\textendash{}e.g., \speaker{Diego Zorro}}
+\begin{exampleblock}{\texttt{\textbackslash{}speaker} command\textemdash{}e.g., \speaker{Diego Zorro}}
 \begin{itemize}
 	\item to be used within \texttt{\textbackslash{}author} standard Beamer command to single out the actual speaker among the authors
 	\item[e.g.] as in
@@ -479,7 +479,6 @@ The following \BibTeX{} entry in the \texttt{.bib} file with the \texttt{apice} 
     apice = {BibtexPatashnik88},
     author = {Patashnik, Oren},
     booktitle = {\BibTeXing},
-    month = {8~} # feb,
     organization = {CTAN, The Comprehensive TeX Archive Network},
     title = {\BibTeX{}ing},
     url = {https://mirrors.ctan.org/biblio/bibtex/base/btxdoc.pdf},
@@ -490,10 +489,10 @@ would translate into the following entry in the presentation bibliography
 %
 \begin{thebibliography}{}
 \bibitem[Patashnik, 1988]{bibtex-patashnik1988}
-Patashnik, O. (1988).
-\\[-0.1em] {\em \BibTeX{}ing}.
-\\[-0.0em] CTAN, The Comprehensive TeX Archive Network
-\\[-0.4em] \apicepubpar{BibtexPatashnik88} \uuurl{https://mirrors.ctan.org/biblio/bibtex/base/btxdoc.pdf}.
+Patashnik, O. (1988)
+\newblock {\bfseries {\em \BibTeX{}ing}}
+\newblock CTAN, The Comprehensive TeX Archive Network
+\newblock\apicepubpar{BibtexPatashnik88} \uuurl{https://mirrors.ctan.org/biblio/bibtex/base/btxdoc.pdf}
 \end{thebibliography}
 %
 \end{exampleblock}
@@ -524,10 +523,10 @@ Patashnik, O. (1988).
 \end{alertblock}
 %
 \begin{exampleblock}{Example}
-\begin{verbatim}
+{\scriptsize\begin{verbatim}
 \documentclass[presentation,bologna]{beamer}
     \mode<presentation>{\usetheme{AMSUniBo}}
-\end{verbatim}
+\end{verbatim}} %chktex 31
 \end{exampleblock}
 %
 \end{frame}

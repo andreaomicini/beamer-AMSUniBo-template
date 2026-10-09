@@ -95,22 +95,20 @@ This template passes `bologna`, so its slides carry the Ateneo seal.
 
 This is
 [beamer-AMSBolognaFC-template](https://github.com/andreaomicini/beamer-AMSBolognaFC-template)
-with the AMSUniBo style in place of the AMSBolognaFC one. The frames, the
-structure and the demonstrations are the same, with three differences:
+with the AMSUniBo style in place of the AMSBolognaFC one. Since AMSBolognaFC 1.8
+the two have the same frames and demonstrate the same features; what differs
+is the palette, which the `Colours` frame documents, and the faces.
 
-* the `Colours` frame documents the AMSUniBo palette and where each value comes
-  from;
-* in the `Citations` frame each weight is demonstrated on a header it can
-  actually be read on. `\ccite` and `\cccite` are **both** light — a citation
-  marker's usual home is a block header, which is dark — so `\ccite` sits on the
-  `block` header and `\cccite`, the lighter of the two, on the `alertblock` one.
-  The original template put `\cccite` on a light header, where it cannot be seen.
-  Since style 1.6.1 the frame also demonstrates the optional note both weights
-  now take, as in `\ccite[p.~42]{key}`, which the AMSBolognaFC style has not.
-* the `URLs` and `DOI` frames record that since style 1.6.2 an address needs no
-  escaping, so the chapter DOI is written `\ddoi{10.1007/978-3-032-22940-3_12}`,
-  exactly as the publisher gives it. Under the AMSBolognaFC style that underscore
-  still asks for maths mode.
+In the `Citations` frame each weight is demonstrated on a header it can actually
+be read on. `\ccite` and `\cccite` are **both** light — a citation marker's
+usual home is a block header, which is dark — so `\ccite` sits on the `block`
+header and `\cccite`, the lighter of the two, on the `alertblock` one. The frame
+also demonstrates the optional note both weights take since style 1.6.1, as in
+`\ccite[p.~42]{key}`.
+
+The `URLs` and `DOI` frames record that since style 1.6.2 an address needs no
+escaping, so the chapter DOI is written `\ddoi{10.1007/978-3-032-22940-3_12}`,
+exactly as the publisher gives it.
 
 ## structure
 
