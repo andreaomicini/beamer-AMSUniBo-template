@@ -1,5 +1,7 @@
 # beamer-AMSUniBo-template
 
+![AMSUniBo Beamer template logo](logo/amsunibo-template-full.svg)
+
 > A ready-to-use presentation skeleton for the
 > [AMSUniBo Beamer style](https://github.com/andreaomicini/beamer-AMSUniBo)
 
