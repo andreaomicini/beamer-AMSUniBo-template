@@ -1,0 +1,33 @@
+# Builds the template on every push that touches what it builds from, and keeps the PDF as a
+# downloadable artifact. GitLab is the primary repository, so the CI runs here (Andrea,
+# 2026-11-01); the release, here and on GitHub, is the next step.
+#
+# The style is not installed on the runner: the .sty, .bst and background links at the root point
+# into the `.style` submodule, hence GIT_SUBMODULE_STRATEGY.
+
+build:
+  image: texlive/texlive:latest
+  rules:
+    - changes:
+        - AMSUniBo-template.tex
+        - AMSUniBo-template.bib
+        - "*.sty"
+        - "*.bst"
+        - "*.pdf"
+        - .gitmodules
+        - .gitlab-ci.yml
+        - .style
+  variables:
+    GIT_SUBMODULE_STRATEGY: recursive
+  script:
+    - latexmk -pdf -file-line-error -interaction=nonstopmode -halt-on-error AMSUniBo-template.tex
+  artifacts:
+    name: AMSUniBo-template
+    paths:
+      - AMSUniBo-template.pdf
+    expire_in: 4 weeks
+
+# --- is .style behind its style? ---------------------------------------------------------------
+include:
+  - project: andrea.omicini/beamer-AMSUniBo
+    file: /ci/style-lag.gitlab-ci.yml
