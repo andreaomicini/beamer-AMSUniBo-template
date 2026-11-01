@@ -1,6 +1,6 @@
 # Builds the template on every push that touches what it builds from, and keeps the PDF as a
-# downloadable artifact. GitLab is the primary repository, so the CI runs here (Andrea,
-# 2026-11-01); the release, here and on GitHub, is the next step.
+# downloadable artifact; on main, releases it here and on GitHub. GitLab is the primary repository,
+# so the CI runs here (Andrea, 2026-11-01), as for the decks; GitHub is the mirror.
 #
 # The style is not installed on the runner: the .sty, .bst and background links at the root point
 # into the `.style` submodule, hence GIT_SUBMODULE_STRATEGY.
@@ -17,6 +17,7 @@ build:
         - .gitmodules
         - .gitlab-ci.yml
         - .style
+        - ci/*
   variables:
     GIT_SUBMODULE_STRATEGY: recursive
   script:
@@ -26,6 +27,32 @@ build:
     paths:
       - AMSUniBo-template.pdf
     expire_in: 4 weeks
+
+# --- the release: <version>-<UTC stamp>, here (package registry + release) and on GitHub -----------
+# ci/release.py; GITHUB_TOKEN is a fine-grained token (this repository, Contents read and write) kept
+# as a masked, protected variable in Settings > CI/CD > Variables.
+
+release:
+  stage: deploy
+  image: python:3-alpine
+  needs: [build]
+  rules:
+    - if: $CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH
+      when: never
+    - changes:
+        - AMSUniBo-template.tex
+        - AMSUniBo-template.bib
+        - "*.sty"
+        - "*.bst"
+        - "*.pdf"
+        - .gitmodules
+        - .gitlab-ci.yml
+        - .style
+        - ci/*
+  variables:
+    GIT_SUBMODULE_STRATEGY: none
+  script:
+    - python3 ci/release.py AMSUniBo-template.tex AMSUniBo-template.pdf "AMSUniBo Beamer template"
 
 # --- is .style behind its style? ---------------------------------------------------------------
 include:
