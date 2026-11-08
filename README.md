@@ -1,5 +1,9 @@
 # beamer-AMSUniBo-template
 
+> **Frozen since 2026-11-08.** The template is now
+> [almamater-template](https://github.com/andreaomicini/beamer-almamater-template), one template built
+> once per preset, `AMSUniBo` among them. Nothing here changes any more.
+
 ![AMSUniBo Beamer template logo](logo/amsunibo-template-full.svg)
 
 > A ready-to-use presentation skeleton for the
